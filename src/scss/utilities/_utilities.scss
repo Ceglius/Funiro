@@ -1,0 +1,36 @@
+@use '../abstract/vars' as *;
+@use '../abstract/mixins' as *;
+
+/*
+  ==== Utilities ====
+*/
+
+// Container
+[class*="__container"]  {
+  max-width: ($containerWidth + $containerPadding) + px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $containerSidePadding + px;
+
+  @media (max-width: $breakpoint1450) {
+     
+  }
+
+  @media (max-width: $breakpoint992) {
+      
+  }
+
+  @media (max-width: $breakpoint768) {
+     
+  }
+
+  @media (max-width: $breakpoint480) {
+     
+  }
+}
+
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

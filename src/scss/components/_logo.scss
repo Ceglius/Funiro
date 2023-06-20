@@ -1,0 +1,11 @@
+@use '../abstract/vars' as *;
+@use '../abstract/mixins' as *;
+
+// Logo
+.logo {
+    font-weight: var(--fw-bold);
+    font-size: rem(25);
+    color: var(--black-co);
+    z-index: 10;
+    position: relative;
+}
