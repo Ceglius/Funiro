@@ -6,26 +6,7 @@
 */
 
 .header {
-    padding: rem(30) 0;
-    // .header__container
-    &__container {
-        @include flex-sb-center($gap:30);
-        
-    }
 
-    // .header__logo
-    &__logo {
-        
-    }
-
-    // .header__menu
-    &__menu {
-
-        @media (max-width: $burgerBreakpoint){
-            margin-left: auto;
-        }
-    }
 }
-
 
 

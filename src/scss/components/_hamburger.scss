@@ -5,64 +5,118 @@
    ==== Burger ====
 */
 
-.burger {
-    display: none;
-    background: transparent;
-    z-index: 3;
+// .burger {
+//     display: none;
+//     background: transparent;
+//     z-index: 3;
     
-    @media screen and (max-width: $burgerBreakpoint) {
-        display: flex;
-        position: relative;
-        height: 20px;
-        width: 30px;
+//     @media screen and (max-width: $burgerBreakpoint) {
+//         display: flex;
+//         position: relative;
+//         height: 20px;
+//         width: 30px;
  
-        &.active {
-            &:before {
-                background: var(--burger-active-color);
-                transform: rotate(45deg);
-                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-                top: 8px;
-            }
+//         &.active {
+//             &:before {
+//                 background: var(--burger-active-color);
+//                 transform: rotate(45deg);
+//                 transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+//                 top: 8px;
+//             }
  
-            &:after {
-                background:  var(--burger-active-color);
-                transform: rotate(-45deg);
-                bottom: 10px;
-                transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-            }
+//             &:after {
+//                 background:  var(--burger-active-color);
+//                 transform: rotate(-45deg);
+//                 bottom: 10px;
+//                 transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+//             }
  
-            & span {
-                transform: scale(0);
-            }
-        }
+//             & span {
+//                 transform: scale(0);
+//             }
+//         }
  
-        &:before,
-        &:after {
-            content: '';
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: var(--burger-color);
-            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-        }
+//         &:before,
+//         &:after {
+//             content: '';
+//             position: absolute;
+//             height: 2px;
+//             width: 100%;
+//             background: var(--burger-color);
+//             transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+//         }
  
-        &:before {
-            top: 0;
-        }
+//         &:before {
+//             top: 0;
+//         }
  
-        &::after {
-            bottom: 0;
-        }
+//         &::after {
+//             bottom: 0;
+//         }
  
-        span {
-            position: absolute;
-            top: 9px;
-            right: 0;
-            width: 100%;
-            background: var(--burger-color);
-            height: 2px;
-            transform: scale(1);
-            transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
-        }
-    }
- }
+//         span {
+//             position: absolute;
+//             top: 9px;
+//             right: 0;
+//             width: 100%;
+//             background: var(--burger-color);
+//             height: 2px;
+//             transform: scale(1);
+//             transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all;
+//         }
+//     }
+//  }
+
+
+
+//Burger
+
+.icon-menu {
+	display: none;
+	@media (max-width: $breakpoint768) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		z-index: 5;
+		@media (any-hover: none) {
+			cursor: default;
+		}
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}

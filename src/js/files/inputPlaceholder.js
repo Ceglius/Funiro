@@ -1,5 +1,5 @@
 function emeilPlaceholder() {
-  const input = document.querySelector('input[type="email"]');
+  const input = document.querySelector('input');
 
   input.addEventListener("focus", function() {
     this.removeAttribute("placeholder");
@@ -7,7 +7,7 @@ function emeilPlaceholder() {
 
   input.addEventListener("blur", function() {
     if (!this.value) {
-      this.setAttribute("placeholder", "Enter your email");
+      this.setAttribute("placeholder", "Searh for minimalist chair");
     }
   });
 }
