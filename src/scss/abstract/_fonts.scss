@@ -1,13 +1,25 @@
 /*
   ==== Fonts ====
 */
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url('../fonts/Gilroy-Bold.ttf');
+}
+@font-face {
+  font-family: "Gilroy-Regular";
+  src: url('../fonts/Gilroy-Regular.ttf');
+}
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url('../fonts/Gilroy-Medium.ttf');
+}
+@font-face {
+  font-family: "Gilroy-SemiBold";
+  src: url('../fonts/Gilroy-SemiBold.ttf');
+}
 
 :root{
-  --ff-main: "Lato", sans-serif;
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-semi-bold: 600;
-  --fw-bold: 700;
+  --ff-main: "Gilroy-Regular", sans-serif;
   --fs-body: 1rem;
 }
 
