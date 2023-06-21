@@ -1,46 +1,21 @@
-function menuIfdeviceHasHoverEfect() {
-  const menu = document.querySelector(".menu");
 
-  menu.addEventListener("click", function(event) {
-    const target = event.target;
-    const menuItem = target.closest(".menu__item");
-    const submenu = menuItem.querySelector(".menu__submenu");
-      
-   
-    if (submenu && !matchMedia("(hover:hover)").matches) {
-      event.preventDefault();
-      menuItem.classList.toggle("active");
-      submenu.style.display = menuItem.classList.contains("active")
-        ? "block"
-        : "none";
-      
-        const submenuRect = submenu.getBoundingClientRect();
-        const isSubmenuOverflowing = submenuRect.right > document.body.clientWidth;
-  
-        if (isSubmenuOverflowing) {
-          submenu.classList.add('right-aligned');
-        } else {
-          submenu.classList.remove('right-aligned');
-        }
-    }
-  });
+import { isMobile } from "./functions";
+import { removeClasses } from "./functions";
 
-  document.addEventListener("click", function(event) {
-    const target = event.target;
-    const isMenuClicked = target.closest(".menu");
+window.onload = function () {
+  document.addEventListener("click", documentActions);
 
-    if (!isMenuClicked) {
-      const activeItems = menu.querySelectorAll(".menu__item.active");
-
-      for (const activeItem of activeItems) {
-        activeItem.classList.remove("active");
-        const submenu = activeItem.querySelector(".menu__submenu");
-        if (submenu) {
-          submenu.style.display = "none";
-        }
+  // Actions
+  function documentActions(e) {
+    const targetElement = e.target;
+    if (window.innerWidth > 768 && isMobile.any()) {
+      if (targetElement.classList.contains("menu__arrow")) {
+          targetElement.closest(".menu__item").classList.toggle("_hover")
+      }
+      if (!targetElement.closest(".menu__item") && document.querySelectorAll(".menu__item._hover").length > 0) {
+        removeClasses(document.querySelectorAll('.menu__item._hover'), '_hover');
       }
     }
-  });
+    
+  }
 }
-
-menuIfdeviceHasHoverEfect();
