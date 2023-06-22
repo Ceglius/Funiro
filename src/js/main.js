@@ -1,4 +1,4 @@
-// import './files/sliders.js'
-import './files/hamburger.js'
-import './files/menu.js'
-import './files/inputPlaceholder.js'
+import './files/eventListener.js'
+import * as flsFunctions from "./files/functions.js";
+
+flsFunctions.placeholder();

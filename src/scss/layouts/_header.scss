@@ -30,6 +30,14 @@
     align-items: center;
     padding: rem(5) 0;
     min-height: rem(125);
+    position: relative;
+
+    @media (max-width: $breakpoint992) {
+      min-height: rem(80);
+    }
+    @media (max-width: $breakpoint768) {
+      min-height: rem(50);
+    }
   }
 
   // .header__main
@@ -37,6 +45,10 @@
     display: flex;
     align-items: center;
     flex: 0 0 calc(494 / 1240 * 100%);
+
+    @media (max-width: $breakpoint992) {
+      flex: 1 1 auto;
+    }
   }
 
   // .header__menu
@@ -50,11 +62,18 @@
     font-size: rem(24);
     line-height: calc(29 / 24 * 100%);
     color: #000;
+    position: relative;
+    z-index: 5;
   }
 
   // .header__search
 
   &__search {
+    @include adaptiveValue("padding-right", 32, 15);
+
+    @media (min-width: $breakpoint992) {
+      flex: 1 1 auto;
+    }
   }
 
   // .header__actions
@@ -67,6 +86,17 @@
   flex: 0 1 rem(420);
 
   &__body {
+    @media (max-width: $breakpoint768) {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      top: 0;
+      left: 0;
+      background-color: #fcf8f3;
+      transition: left 0.3s ease;
+      padding: rem(70) rem(15) rem(30) rem(15);
+    }
   }
 
   // .menu__list
@@ -82,13 +112,14 @@
 
   // .menu__item
   &__item {
+    position: relative;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     margin: 0px 3px;
     padding: rem(5) 0px;
-    position: relative;
     column-gap: rem(8);
 
     @media (any-hover: hover) {
@@ -112,25 +143,43 @@
     }
     @media (min-width: $breakpoint768) {
       &._hover {
-         .menu__sub-list {
-           opacity: 1;
-           visibility: visible;
-           transform: translateY(rem(0));
-           pointer-events: auto;
-         }
-   
-         .menu__arrow {
-           transform: rotate(180deg);
-         }
-   
-         .menu__arrow,
-         .menu__link {
-           color: var(--orange-co);
-         }
-       }
-     }
-  }
+        .menu__sub-list {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(rem(0));
+          pointer-events: auto;
+        }
 
+        .menu__arrow {
+          transform: rotate(180deg);
+        }
+
+        .menu__arrow,
+        .menu__link {
+          color: var(--orange-co);
+        }
+
+
+      }
+    }
+    @media (max-width: $breakpoint768) {
+      &._hover {
+        .menu__arrow {
+          transform: rotate(180deg);
+        }
+
+        .menu__arrow,
+        .menu__link {
+          color: var(--orange-co);
+        }
+        .menu__sub-list{
+          grid-template-rows: 1fr;
+          
+        }
+      }
+
+    }
+  }
 
   // .menu__link
   &__link {
@@ -139,6 +188,11 @@
     color: var(--body-co);
     line-height: 150%;
     transition: color 0.3s ease 0s;
+    
+    @media (max-width: $breakpoint768) {
+      font-size: rem(24);
+      font-weight: var(--fw-semi-bold);
+    }
   }
 
   // .menu__arrow
@@ -147,15 +201,29 @@
     transition: all 0.3s ease 0s;
     font-size: rem(12);
     background-color: transparent;
+
+    @media (max-width: $breakpoint768) {
+      font-size: rem(14);
+    }
   }
 
   // .menu__sub-list
-
   &__sub-list {
     position: relative;
     background-color: var(--orange-co);
-    padding: rem(15);
-    flex: 11 100%;
+    flex: 1 1 100%;
+    padding: 0 rem(15);
+
+    div {
+      overflow: hidden;
+    }
+    @media (max-width: $breakpoint768) {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows ease-out 0.3s;
+    }
+
+
 
     @media (min-width: $breakpoint768) {
       opacity: 0;
@@ -176,6 +244,13 @@
     &:not(:last-child) {
       margin-bottom: rem(10);
     }
+
+    &:last-child {
+      padding-bottom: rem(15);
+    }
+    &:first-child {
+      padding-top: rem(15);
+    }
   }
 
   // .menu__sub-link
@@ -187,36 +262,123 @@
 }
 
 .search-form {
-  // .search-form__icon
+  max-width: rem(473);
 
+  &._active {
+    .search-form__item {
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    background-color: var(--white-co);
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $breakpoint992) {
+      box-shadow: 0 0 5px rgba(212, 209, 205, 0.3);
+      position: absolute;
+      left: 0;
+      top: -100%;
+      width: 100%;
+      z-index: 5;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  // .search-form__icon
   &__icon {
+    position: relative;
+    z-index: 5;
+    color: #262f56;
+    font-size: rem(24);
+    @media (min-width: $breakpoint992) {
+      display: none;
+    }
   }
 
   // .search-form__btn
-
   &__btn {
+    flex: 0 0 rem(45);
+    height: rem(45);
+    font-size: rem(15);
+    color: #333333;
+  }
+  // .search-form__input
+  &__input {
+    font-size: rem(14);
+    color: var(--dark-grey);
+    width: 100%;
+    outline: none;
+    padding-right: rem(20);
   }
 }
 .actions-header {
-  // .actions-header__item
+  position: relative;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  align-items: center;
+  @include adaptiveValue("gap", 32, 15);
 
+  // .actions-header__item
   &__item {
   }
 
   // .actions-header__item-favorites
-
   &__item-favorites {
+    color: #262f56;
+    font-size: rem(24);
+    transition: color 0.3s ease 0s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--orange-co);
+      }
+    }
   }
 
   // .actions-header__item-user
 
   &__item-user {
+    overflow: hidden;
+    border-radius: 50%;
+    @include adaptiveValue("width", 40, 30);
+    @include adaptiveValue("height", 40, 30);
   }
 }
 .cart-header {
   // .cart-header__icon
 
   &__icon {
+    color: #262f56;
+    font-size: rem(24);
+    transition: color 0.3s ease 0s;
+    position: relative;
+    display: block;
+
+    span {
+      position: absolute;
+      width: rem(20);
+      height: rem(20);
+      @include flex-center();
+      top: rem(-10);
+      right: rem(-10);
+      border-radius: 50%;
+      background-color: var(--orange-co);
+      font-size: rem(12);
+      color: #fff;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--orange-co);
+      }
+    }
   }
 
   // .cart-header__body
