@@ -31,8 +31,8 @@ export function removeClasses(array, className) {
   }
 }
 
-export function placeholder() {
-  const input = document.querySelector("input");
+export function placeholder(type, placeholder) {
+  const input = document.querySelector(`input[type="${type}"]`);
 
   input.addEventListener("focus", function() {
     this.removeAttribute("placeholder");
@@ -40,12 +40,10 @@ export function placeholder() {
 
   input.addEventListener("blur", function() {
     if (!this.value) {
-      this.setAttribute("placeholder", "Searh for minimalist chair");
+      this.setAttribute("placeholder", `${placeholder}`);
     }
   });
 }
-
-
 
 export function menuInit() {
   if (document.querySelector(".icon-menu")) {
