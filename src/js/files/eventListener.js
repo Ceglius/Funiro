@@ -23,8 +23,6 @@ window.onload = function() {
       }
     }
     
-
-
     // search form
     if (targetElement.classList.contains("search-form__icon")) {
       document.querySelector(".search-form").classList.toggle("_active");
