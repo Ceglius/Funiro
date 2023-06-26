@@ -169,13 +169,13 @@
       }
     }
 
-    @media (any-hover: hover) and (max-width: $breakpoint768) {
-      &:hover {
-        .menu__sub-list {
-          grid-template-rows: 1fr;
-        }
-      }
-    }
+    // @media (any-hover: hover) and (max-width: $breakpoint768) {
+    //   &:hover {
+    //     .menu__sub-list {
+    //       grid-template-rows: 1fr;
+    //     }
+    //   }
+    // }
     @media (max-width: $breakpoint768) {
       &._hover {
         .menu__arrow {

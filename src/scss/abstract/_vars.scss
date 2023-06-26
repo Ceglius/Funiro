@@ -5,11 +5,12 @@ $maxWidth: 1920;
 $maxWidthContainer: 1240;
 $responsiveType: 1;
 // Container
-$containerWidth: $maxWidthContainer ;
 $containerPadding: 30;
+$containerWidth: $maxWidthContainer + $containerPadding ;
 $containerSidePadding: math.div($containerPadding, 2);
 // Breakpoints
 $breakpoint1450: 1449.98 + px;
+$breakpointContainer: $containerWidth + px;
 $breakpoint992: 991.98 + px;
 $breakpoint768: 767.98 + px ;
 $breakpoint480: 479.98 + px;

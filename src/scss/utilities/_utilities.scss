@@ -6,26 +6,22 @@
 */
 
 // Container
-[class*="__container"]  {
-  max-width: ($containerWidth + $containerPadding) + px;
+[class*="__container"] {
+  max-width: $containerWidth + px;
   width: 100%;
   margin: 0 auto;
   padding: 0 $containerSidePadding + px;
 
   @media (max-width: $breakpoint1450) {
-     
   }
 
   @media (max-width: $breakpoint992) {
-      
   }
 
   @media (max-width: $breakpoint768) {
-     
   }
 
   @media (max-width: $breakpoint480) {
-     
   }
 }
 
@@ -33,4 +29,11 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.footer-title {
+  color: var(--black-co);
+  @include adaptiveValue("font-size", 24, 20);
+  line-height: calc(29 / 24 * 100%);
+  font-weight: var(--fw-bold);
 }

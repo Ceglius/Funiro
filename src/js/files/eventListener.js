@@ -1,6 +1,8 @@
 import { isMobile } from "./functions";
 import { removeClasses } from "./functions";
 
+window.addEventListener("resize", footerMenuArrow);
+
 window.onload = function() {
   document.addEventListener("click", documentActions);
 
@@ -22,7 +24,7 @@ window.onload = function() {
         );
       }
     }
-    
+
     // search form
     if (targetElement.classList.contains("search-form__icon")) {
       document.querySelector(".search-form").classList.toggle("_active");
@@ -35,5 +37,30 @@ window.onload = function() {
         "_active"
       );
     }
+
+    // footer-link
+    if (window.innerWidth < 768) {
+      if (targetElement.classList.contains("footer-title")) {
+        targetElement
+          .closest(".menu-footer__column")
+          .classList.toggle("_active");
+      }
+    }
   }
 };
+
+
+function footerMenuArrow() {
+  if (window.innerWidth < 768) {
+    document
+      .querySelectorAll(".menu-footer__title")
+      .forEach((el) => el.classList.add("_icon-arrow-down"));
+  } else {
+    removeClasses(
+      document.querySelectorAll(".menu-footer__title,_icon-arrow-down"),
+      "_icon-arrow-down"
+    );
+  }
+}
+
+footerMenuArrow()
