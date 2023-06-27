@@ -13,7 +13,20 @@
   padding: 0 $containerSidePadding + px;
 }
 
+[class*="-ibg"] {
+  position: relative;
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+  }
+}
+.section-title {
 
+}
 
 .footer-title {
   color: var(--black-co);
@@ -22,15 +35,3 @@
   font-weight: var(--fw-bold);
 }
 
-
-[class*="-ibg"] {
-	position: relative;
-	img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		object-fit: cover;
-	}
-}

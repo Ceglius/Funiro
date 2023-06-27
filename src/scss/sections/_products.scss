@@ -1,0 +1,102 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Products ====
+*/
+
+.products {
+  // .products__container
+  &__container {
+  }
+
+  // .products__items
+  &__items {
+  }
+
+  // .products__item
+  &__item {
+  }
+}
+
+.item-product {
+  // .item-product__labels
+  &__labels {
+  }
+
+  // .item-product__label
+  &__label {
+  }
+
+  // .item-product__label--sale
+
+  &__label--sale {
+  }
+  // .item-product__image
+
+  &__image {
+    
+  }
+
+  // .item-product__image--ibg
+
+  &__image--ibg {
+  }
+
+  // .item-product__body
+
+  &__body {
+  }
+
+  // .item-product__content
+
+  &__content {
+  }
+
+  // .item-product__title
+
+  &__title {
+  }
+
+  // .item-product__text
+
+  &__text {
+  }
+
+  // .item-product__prices
+
+  &__prices {
+  }
+
+  // .item-product__price
+
+  &__price {
+  }
+
+  // .item-product__price--before
+
+  &__price--before {
+  }
+
+  // .item-product__actions
+
+  &__actions {
+  }
+
+  // .item-product__label--new
+  &__label--new {
+  }
+}
+.actions-product {
+  // .actions-product__body
+  &__body {
+  }
+
+  // .actions-product__btn
+  &__btn {
+  }
+
+  // .actions-product__link
+  &__link {
+  }
+}
