@@ -40,7 +40,7 @@ function initSliders() {
 	
 				},
 				768: {
-					spaceBetween: 0,
+					// spaceBetween: 0,
 
 				},
 				992: {

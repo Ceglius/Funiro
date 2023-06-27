@@ -51,6 +51,7 @@ export function menuInit() {
       if (e.target.closest(".icon-menu")) {
         document.documentElement.classList.toggle("menu-open");
         document.querySelector(".menu__body").classList.toggle("_active");
+        document.querySelector("body").classList.toggle("lock");
       }
     });
   }

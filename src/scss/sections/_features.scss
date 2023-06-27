@@ -1,0 +1,57 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Features ====
+*/
+
+.features {
+  // .features__container
+  &__container {
+    @include flex-sb-center();
+    flex-wrap: wrap;
+  }
+
+  // .features__item
+  &__item {
+    padding: rem(15) 0;
+    display: inline-grid;
+    grid-template: auto auto / rem(85) 1fr;
+
+    @media (max-width: $breakpoint992){
+      min-width: rem(280);
+      
+    }
+    @media (max-width: $breakpoint768){
+      grid-template: auto auto / auto 1fr;
+    }
+  }
+
+  // .features__icon
+  &__icon {
+    text-align: center;
+    align-self: center;
+    grid-row: span 2;
+
+    @media (max-width: $breakpoint768) {
+      padding-right: rem(15);
+    }
+  }
+
+  // .features__title
+
+  &__title {
+    color: #3a3a3a;
+    font-size: 18px;
+
+    font-weight: var(--fw-semi-bold);
+    line-height: 150%;
+  }
+
+  // .features__text
+  &__text {
+    font-weight: var(--fw-medium);
+    line-height: 150%;
+    color: var(--grey-co);
+  }
+}

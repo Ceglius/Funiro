@@ -1,5 +1,5 @@
-import { Callbacks } from "jquery";
-import { isMobile } from "./functions";
+
+
 import { removeClasses } from "./functions";
 
 window.addEventListener("resize", footerMenuArrow);
@@ -11,7 +11,6 @@ window.onload = function() {
     const targetElement = e.target;
 
     // sub menu
-    if (isMobile.any()) {
       if (targetElement.classList.contains("menu__arrow")) {
         targetElement.closest(".menu__item").classList.toggle("_hover");
       }
@@ -24,7 +23,7 @@ window.onload = function() {
           "_hover"
         );
       }
-    }
+    
 
     // search form
     if (targetElement.classList.contains("search-form__icon")) {

@@ -24,6 +24,7 @@
 	gap: rem($gap);
 }
 
+
 @mixin flex-center($gap:0) {
 	display: flex;
     justify-content: center;

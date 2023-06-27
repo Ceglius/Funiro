@@ -17,14 +17,13 @@
 
   &._scroll {
     .header__wrapper {
-      background-color: rgba(236, 236, 232, 0.8);
+      background-color: rgba(236, 236, 232, 0.9);
     }
 
     .header__body {
       min-height: rem(50);
-      @media (min-width: $breakpoint992){
-      min-height:rem(70);
-
+      @media (min-width: $breakpoint992) {
+        min-height: rem(70);
       }
     }
   }
@@ -52,7 +51,7 @@
     padding: rem(5) 0;
     min-height: rem(125);
     position: relative;
-    transition: min-height .6s ease .3;
+    transition: min-height 0.6s ease 0.3;
 
     @media (max-width: $breakpoint992) {
       min-height: rem(80);
@@ -152,25 +151,31 @@
     padding: rem(5) 0px;
     column-gap: rem(8);
 
-    @media (any-hover: hover) {
-      &:hover {
-        .menu__sub-list {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(rem(0));
-          pointer-events: auto;
-        }
+    @media (min-width: $breakpoint768) {
+      @media (any-hover: hover) {
+        &:hover {
+          .menu__sub-list {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(rem(0));
+            pointer-events: auto;
+          }
 
-        .menu__arrow {
-          transform: rotate(180deg);
-        }
+          .menu__arrow {
+            transform: rotate(180deg);
+          }
 
-        .menu__arrow,
-        .menu__link {
-          color: var(--orange-co);
+          .menu__arrow,
+          .menu__link {
+            color: var(--orange-co);
+          }
+          .menu__sub-list {
+            grid-template-rows: 1fr;
+          }
         }
       }
     }
+
     @media (min-width: $breakpoint768) {
       &._hover {
         .menu__sub-list {

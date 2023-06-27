@@ -10,6 +10,12 @@
 
   // .page__main-slider
   &__main-slider {
-   
+
+  }
+
+  // .page__features
+  &__features {
+    @include adaptiveValue('padding-top',80,30);
+    @include adaptiveValue('padding-buttom',80,30);
   }
 }
