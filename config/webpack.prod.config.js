@@ -103,6 +103,10 @@ module.exports = merge(common, {
   },
   module: {
     rules: [
+        { // here doing the swiper loader and declaring no sideEffects
+          test: /swiper\.esm\.js/,
+          sideEffects: false
+        },
       {
         test: /\.css$/,
         exclude: /\.module\.css$/,
@@ -138,6 +142,7 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: "./assets/css/[name].[contenthash:10].css",
     }),
+
 
     // new ZipPlugin({
     //   path: '../',

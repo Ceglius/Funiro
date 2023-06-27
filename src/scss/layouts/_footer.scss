@@ -5,10 +5,6 @@
 */
 .footer {
 
-  // .footer__container
-  &__container {
-  }
-
   // .footer__body
   &__body {
     border-top: 1px solid #d8d8d8;
@@ -48,18 +44,11 @@
     line-height: 150%;
   }
 
-  // .footer__contacts
-  &__contacts {
-  }
-
   // .footer__menu
   &__menu {
     @include adaptiveValue("margin-bottom", 40, 30);
   }
 
-  // .footer__subscribe
-  &__subscribe {
-  }
 }
 
 .contacts-footer {

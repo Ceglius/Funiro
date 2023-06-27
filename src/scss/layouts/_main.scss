@@ -5,6 +5,11 @@
    ==== Main ====
 */
 
-.main-content  {
-   flex: 1 1 auto;
+.page {
+  flex: 1 1 auto;
+
+  // .page__main-slider
+  &__main-slider {
+   
+  }
 }
