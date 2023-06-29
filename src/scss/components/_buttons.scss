@@ -13,6 +13,19 @@
   text-align: center;
   transition: all 0.3s ease;
   min-height: rem(48);
+
+  &--white {
+    color: var(--orange-co);
+    background-color: var(--white-co);
+
+    @media (any-hover: hover) {
+      
+      &:hover {
+        color: var(--white-co);
+        background-color:  var(--orange-co);
+      }
+    }
+  }
 }
 
 .slider-arrow {

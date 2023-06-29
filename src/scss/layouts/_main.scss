@@ -2,7 +2,7 @@
 @use '../abstract/mixins' as *;
 
 /*
-   ==== Main ====
+   ==== Page ====
 */
 
 .page {
@@ -15,10 +15,11 @@
   // .page__features
   &__features {
     @include adaptiveValue("padding-top", 80, 30);
-    @include adaptiveValue("padding-buttom", 80, 30);
+    @include adaptiveValue("padding-bottom", 80, 30);
   }
 
   // .page__products
   &__products {
+    @include adaptiveValue('padding-bottom',44,30);
   }
 }

@@ -6,97 +6,200 @@
 */
 
 .products {
-  // .products__container
-  &__container {
+
+  // .products__title
+  &__title {
+    margin-bottom: calc(32px / 40px * 1em);
   }
 
   // .products__items
   &__items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(rem(285), 1fr));
+    gap: rem(32);
+  }
+  &__footer {
+    text-align: center;
+    padding-top: rem(32);
+  }
+  &__more {
+    border: 1px solid var(--orange-co);
+    min-width: rem(245);
+    font-weight: var(--fw-semi-bold);
+
+    &._hold {
+      opacity: 0.2;
+      cursor: default;
+    }
   }
 
-  // .products__item
-  &__item {
-  }
 }
 
 .item-product {
+  background-color: #f4f5f7;
+  @include flex-column();
+  position: relative;
+
+    @media (any-hover: hover) {
+      
+      &:hover {
+        .item-product__actions {
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+
   // .item-product__labels
   &__labels {
+    position: absolute;
+    z-index: 2;
+    @include flex-column();
+    @include adaptiveValue("top", 24, 10);
+    @include adaptiveValue("right", 24, 10);
   }
 
   // .item-product__label
   &__label {
+    flex: 0 0 rem(48);
+    width: rem(48);
+    @include flex-center();
+    color: var(--white-co);
+    font-weight: var(--fw-medium);
+    line-height: 150%;
+    border-radius: 50%;
+    &:not(:last-child) {
+      margin-bottom: rem(10);
+    }
+
+    &--sale {
+      background-color: #e97171;
+    }
+
+    &--new {
+      background-color: #2ec1ac;
+    }
   }
 
-  // .item-product__label--sale
-
-  &__label--sale {
-  }
   // .item-product__image
-
   &__image {
-    
-  }
-
-  // .item-product__image--ibg
-
-  &__image--ibg {
+    padding-bottom: calc(301 / 285) * 100%;
   }
 
   // .item-product__body
-
   &__body {
+    flex: 1 1 auto;
+    padding: rem(16) rem(16) rem(30) rem(16);
+    @include flex-column();
   }
 
   // .item-product__content
-
   &__content {
+    flex: 1 1 auto;
   }
 
   // .item-product__title
-
   &__title {
+    @include adaptiveValue("font-size", 24, 20);
+    line-height: 120%;
+    font-weight: var(--fw-semi-bold);
+    margin-bottom: calc(8 / 24 * 1em);
   }
 
   // .item-product__text
-
   &__text {
+    font-variant: var(--grey-co);
+    line-height: 150%;
+    margin-bottom: calc(8 / 24 * 1em);
   }
 
   // .item-product__prices
-
   &__prices {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    line-height: 150%;
   }
 
   // .item-product__price
-
   &__price {
+    @include adaptiveValue("font-size", 20, 16);
+    font-weight: var(--fw-semi-bold);
+    line-height: 150%;
   }
 
   // .item-product__price--before
-
   &__price--before {
+    font-weight: var(--fw-regular);
+    margin-left: rem(16);
+    color: #b0b0b0;
+    text-decoration: line-through;
   }
 
   // .item-product__actions
-
   &__actions {
+    @media (any-hover: none) {
+      padding-top: rem(15);
+    }
+
+    @media (any-hover: hover) and (min-width: $breakpoint768){
+      opacity: 0;
+      visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      @include flex-center();
+      background: hsla(0, 0%, 23%, 0.712);
+      z-index: 3;
+      transition: all 0.3s;
+    }
   }
 
-  // .item-product__label--new
-  &__label--new {
-  }
+
 }
+
 .actions-product {
   // .actions-product__body
   &__body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   // .actions-product__btn
   &__btn {
+    flex: 1 1 100%;
+    margin-bottom: rem(24);
+
+    &._hold {
+      opacity: 0.2;
+      cursor: default;
+    }
   }
+
 
   // .actions-product__link
   &__link {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    font-weight: var(--fw-semi-bold);
+    transition: all 0.3s ease;
+
+    &::before {
+      display: flex;
+      align-items: center;
+      font-size: rem(16);
+      margin-right: rem(10);
+     margin-top: rem(4);
+    }
+    @media (any-hover: hover)and  (min-width: $breakpoint768){
+      color: var(--white-co);
+      &:hover {
+        color: var(--orange-co);
+      }
+    }
   }
 }

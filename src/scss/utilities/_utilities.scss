@@ -13,7 +13,7 @@
   padding: 0 $containerSidePadding + px;
 }
 
-[class*="-ibg"] {
+[class*="--ibg"] {
   position: relative;
   img {
     position: absolute;
@@ -25,7 +25,11 @@
   }
 }
 .section-title {
-
+  @include adaptiveValue('font-size',40,24);
+  font-family: Gilroy;
+  font-weight: var(--fw-bold);
+  line-height: 120%;
+  text-align: center
 }
 
 .footer-title {
@@ -33,5 +37,13 @@
   @include adaptiveValue("font-size", 24, 20);
   line-height: calc(29 / 24 * 100%);
   font-weight: var(--fw-bold);
+}
+
+
+._flyImage.--ibg {
+  opacity: 1;
+  position: fixed;
+  z-index: 100;
+  transition: all 1s ease 0s;
 }
 

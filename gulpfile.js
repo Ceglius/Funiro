@@ -14,21 +14,21 @@ function buildStyles() {
 
 
 //js 
- function scripts() {
-  return gulp.src(['./src/js/**/*.js', "!./src/js/main.js"])
-    .pipe(concat('main.js'))
-    .pipe(beautify({
-      "indent_char": "\t",
-      "indent_size": 2,
-      indent_size: 4,
-      js: {
-        indent_char: '\t',
-        indent_size: 1
-      }
-    }))
-    .pipe(gulp.dest('./dist/assets/js'));
-};
+//  function scripts() {
+//   return gulp.src(['./src/js/**/*.js', "!./src/js/main.js"])
+//     .pipe(concat('main.js'))
+//     .pipe(beautify({
+//       "indent_char": "\t",
+//       "indent_size": 2,
+//       indent_size: 4,
+//       js: {
+//         indent_char: '\t',
+//         indent_size: 1
+//       }
+//     }))
+//     .pipe(gulp.dest('./dist/assets/js'));
+// };
 
 
 
-exports.default = gulp.series(buildStyles, scripts)
+exports.default = gulp.series(buildStyles)

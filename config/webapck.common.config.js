@@ -86,11 +86,16 @@ const config = {
         removeComments: false,
       },
       inject: true,
+      // templateParameters: {
+      //   data: '../src/data/products.json'
+      // }
+      // templateParameters:require('../src/data/products.json')
     }),
     new BeautifyHtmlWebpackPlugin(),
 
     new CopyPlugin({
-      patterns: [{ from: "src/images", to: "assets/images" }],
+      patterns: [{ from: "src/images", to: "assets/images" },
+      { from: "src/data", to: "assets/data" }],
     }),
   ],
 };

@@ -10,6 +10,10 @@
   &__container {
     @include flex-sb-center();
     flex-wrap: wrap;
+
+    @media (max-width: $breakpoint768){
+      justify-content: space-evenly;
+    }
   }
 
   // .features__item
@@ -43,9 +47,12 @@
   &__title {
     color: #3a3a3a;
     font-size: 18px;
-
     font-weight: var(--fw-semi-bold);
     line-height: 150%;
+
+    @media (max-width: $breakpoint768){
+      text-align: center;
+    }
   }
 
   // .features__text
@@ -53,5 +60,8 @@
     font-weight: var(--fw-medium);
     line-height: 150%;
     color: var(--grey-co);
+    @media (max-width: $breakpoint768){
+      text-align: center;
+    }
   }
 }
