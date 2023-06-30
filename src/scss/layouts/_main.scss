@@ -20,6 +20,11 @@
 
   // .page__products
   &__products {
-    @include adaptiveValue('padding-bottom',44,30);
+    @include adaptiveValue("padding-bottom", 44, 30);
+  }
+
+  // .page__insparations
+  &__insparations {
+    
   }
 }

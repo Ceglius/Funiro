@@ -1,0 +1,83 @@
+@use '../abstract/vars' as *;
+@use '../abstract/mixins' as *;
+
+
+.insparations {
+
+    // .insparations__container
+    &__container {
+    }
+
+    // .insparations__body
+
+    &__body {
+    }
+
+    // .insparations__title
+    &__title {
+    }
+
+    // .insparations__text
+    &__text {
+    }
+
+    // .insparations__btn
+    &__btn {
+    }
+
+    // .insparations__slider
+    &__slider {
+    }
+}
+
+.slider-insparations {
+
+    // .slider-insparations__arrows
+    &__arrows {
+
+
+    }
+
+    // .slider-insparations__dots
+    &__dots {
+    }
+
+    // .slider-insparations__wrapper
+    &__wrapper {
+    }
+
+    // .slider-insparations__slide
+    &__slide {
+    }
+
+    // .slider-insparations__image
+    &__image {
+    }
+
+    // .slider-insparations__image--ibg
+    &__image--ibg {
+    }
+
+    // .slider-insparations__content
+    &__content {
+    }
+
+    // .slider-insparations__label
+    &__label {
+    }
+
+    // .slider-insparations__title
+    &__title {
+    }
+}
+
+
+
+.label-slider {
+}
+.label-slider-number {
+}
+.label-slider-line {
+}
+.label-slider-text {
+}
