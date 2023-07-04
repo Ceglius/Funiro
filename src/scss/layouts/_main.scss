@@ -28,4 +28,9 @@
     @include adaptiveValue("padding-bottom", 44, 33);
     @include adaptiveValue("padding-top", 44, 33);
   }
+
+  &__tips {
+    @include adaptiveValue("padding-bottom", 44, 33);
+    @include adaptiveValue("padding-top", 44, 33);
+  }
 }

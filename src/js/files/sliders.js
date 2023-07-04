@@ -76,39 +76,47 @@ function initSliders() {
 			}
 		});
 	}
-}
+	if (document.querySelector('.tips__slider')) { 
+		new Swiper('.tips__slider', { 
+			modules: [Navigation, Pagination],
+			observeParents: true,
+			observer:true,
+			slidesPerView: 3,
+			spaceBetween: 32,
+            speed: 800,
+			loop: true,
+            pagination: {
+				el: '.slider-tips__dots',
+				clickable: true,
+			},
+            navigation: {
+				prevEl: '.tips__slider .slider-arrow__prev',
+				nextEl: '.tips__slider .slider-arrow__next',
+			},
 
-function initSlidersScroll() {
-	let sliderScrollItems = document.querySelectorAll('.swiper_scroll');
-	if (sliderScrollItems.length > 0) {
-		for (let index = 0; index < sliderScrollItems.length; index++) {
-			const sliderScrollItem = sliderScrollItems[index];
-			const sliderScrollBar = sliderScrollItem.querySelector('.swiper-scrollbar');
-			const sliderScroll = new Swiper(sliderScrollItem, {
-				observer: true,
-				observeParents: true,
-				direction: 'vertical',
-				slidesPerView: 'auto',
-				freeMode: {
-					enabled: true,
+			breakpoints: {
+				320: {
+					slidesPerView: 1.1,
+					spaceBetween: 15,
 				},
-				scrollbar: {
-					el: sliderScrollBar,
-					draggable: true,
-					snapOnRelease: false
+				768: {
+					slidesPerView: 2,
+					spaceBetween: 20,
+
 				},
-				mousewheel: {
-					releaseOnEdges: true,
+				992: {
+					slidesPerView: 3,
+					spaceBetween: 32,
 				},
-			});
-			sliderScroll.scrollbar.updateSize();
-		}
+
+			},
+			
+		});
 	}
 }
 
+
+
 window.addEventListener("load", function (e) {
-	// Запуск ініціалізації слайдерів
 	initSliders();
-	// Запуск ініціалізації скролла на базі слайдера (за класом swiper_scroll)
-	//initSlidersScroll();
 });

@@ -1,0 +1,130 @@
+@use '../abstract/vars' as *;
+@use '../abstract/mixins' as *;
+
+/*
+   ==== Tips ====
+*/
+
+.tips {
+  // .tips__container
+
+  &__container {
+  }
+
+  // .tips__text
+  &__text {
+    
+  }
+
+  // .tips__title
+
+  &__title {
+  }
+
+  // .tips__slider
+
+  &__slider {
+  }
+}
+
+.slider-tips {
+  // .slider-tips__wrapper
+  position: relative;
+  @include adaptiveValue('margin-left',-32,-15);
+  @include adaptiveValue('margin-right',-32,-15);
+  @include adaptiveValue('padding',32,15);
+
+
+  &__wrapper {
+
+
+    
+  }
+
+  // .slider-tips__slide
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.3s ease;
+
+    @media (any-hover: hover) {
+        
+        &:hover {
+            box-shadow : 0 0 32px rgba(97, 97, 97, 0.10);
+        }
+    }
+
+  }
+
+  // .slider-tips__img
+  &__img {
+    padding-bottom: calc(251 / 391) * 100%;
+  }
+
+  // .slider-tips__img--ibg
+  &__img--ibg {
+  }
+
+  // .slider-tips__body
+  &__body {
+    padding: rem(16);
+    // flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  // .slider-tips__arrows
+  &__arrows {
+    pointer-events: none;
+    position: absolute;
+    top: 45%;
+    transform: translate(0px, -45%);
+    width: calc(100% - 64px);
+    left: rem(24);
+    z-index: 5;
+    justify-content: space-between;
+
+    @media (min-width: $breakpointContainer){
+        width: calc(100% - rem(22));
+        left: rem(10);
+    }
+
+    @media (max-width: $breakpoint768){
+        display: none;
+    }
+  }
+
+  // .slider-tips__dots
+  &__dots {
+    justify-content: center;
+
+    @include adaptiveValue('margin-top',43,35);
+  }
+
+  // .slider-tips__title
+
+  &__title {
+    @include adaptiveValue("font-size", 24, 20);
+    font-weight: var(--fw-semi-bold);
+    line-height: 120%;
+    color: var(--body-co);
+    transition: all 0.3s ease;
+    @media (any-hover: hover) {
+        
+        &:hover {
+            color: var(--orange-co);
+        }
+    }
+    &:not(:last-child) {
+      margin-bottom: calc(8 / 24 * 1em);
+    }
+  }
+
+  // .slider-tips__date
+  &__date {
+    font-size: rem(14);
+    color: #898989;
+    line-height: 150%;
+  }
+}
