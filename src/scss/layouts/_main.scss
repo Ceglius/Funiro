@@ -25,6 +25,7 @@
 
   // .page__insparations
   &__insparations {
-    
+    @include adaptiveValue("padding-bottom", 44, 33);
+    @include adaptiveValue("padding-top", 44, 33);
   }
 }
