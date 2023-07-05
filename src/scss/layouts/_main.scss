@@ -29,8 +29,14 @@
     @include adaptiveValue("padding-top", 44, 33);
   }
 
+ // .page__tips
   &__tips {
     @include adaptiveValue("padding-bottom", 44, 33);
     @include adaptiveValue("padding-top", 44, 33);
+  }
+
+  // .page__furniture
+  &__furniture {
+    @include adaptiveValue("padding-bottom", 85, 40);
   }
 }

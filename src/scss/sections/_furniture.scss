@@ -1,0 +1,135 @@
+@use "../abstract/vars" as *;
+@use "../abstract/mixins" as *;
+
+/*
+   ==== Furniture ====
+*/
+
+.furniture {
+  // .furniture__container
+
+  &__wrapper {
+  }
+
+  // .furniture__label
+
+  &__label {
+    @include adaptiveValue("font-size", 20, 16);
+    text-align: center;
+    color: var(--dark-grey);
+    &:not(:last-child) {
+      margin-bottom: calc(8 / 20) * 1em;
+    }
+  }
+
+  // .furniture__title
+
+  &__title {
+    margin-bottom: calc(32 / 40) * 1em;
+  }
+
+  // .furniture__body
+  &__body {
+    position: relative;
+
+    @media (any-hover: none) {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media (max-width: $breakpoint768) {
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+
+  // .furniture__items
+  &__items {
+    display: grid;
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: rem(16);
+    // justify-content: center;
+    @media (any-hover: hover) and (min-width: $breakpoint768) {
+      justify-content: center;
+    }
+  }
+
+  // .furniture__column
+  &__column {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 -8px;
+
+    &:first-child {
+      justify-content: center;
+    }
+  }
+  // .furniture__row
+  &__row {
+    display: inline-grid;
+    padding: 0 8px;
+    gap: rem(16);
+    grid-template-columns: auto;
+    grid-auto-flow: column;
+
+    &:not(:last-child) {
+      margin-bottom: rem(16);
+    }
+  }
+}
+
+.row-furniture {
+  // .row-furniture__left-top
+
+  &__left-top {
+    justify-content: end;
+    align-items: end;
+  }
+
+  // .row-furniture__item
+  &__item {
+    img {
+      transition: all 0.8s ease;
+
+      @media (min-width: $breakpoint768) {
+        filter: grayscale(1);
+      }
+    }
+
+    @media (min-width: $breakpoint768) {
+      &:hover {
+        img {
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
+
+  // .row-furniture__left-bottom
+
+  &__left-bottom {
+    justify-content: end;
+    align-items: start;
+  }
+
+  // .row-furniture__center
+
+  &__center {
+    display: block;
+  }
+
+  // .row-furniture__right-top
+
+  &__right-top {
+    align-items: end;
+  }
+
+  // .row-furniture__right-bottom
+
+  &__right-bottom {
+    align-items: start;
+  }
+}
