@@ -6,6 +6,7 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const glob = require("glob");
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const ZipPlugin = require("zip-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = merge(common, {
   entry: {
@@ -17,6 +18,13 @@ module.exports = merge(common, {
   },
   mode: "production",
   optimization: {
+   
+      minimize: true,
+      minimizer: [
+        new TerserPlugin({
+          extractComments: false,
+        }),
+      ],
     
     splitChunks: {
       chunks: "all",
