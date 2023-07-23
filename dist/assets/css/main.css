@@ -657,7 +657,7 @@ body.lock {
 }
 
 @media (min-width: 767.98px) and (any-hover: hover) {
-  .menu__item:hover .menu__sub-list {
+  .menu__item:hover .menu__mobile {
     opacity: 1;
     visibility: visible;
     transform: translateY(0rem);
@@ -675,7 +675,7 @@ body.lock {
   }
 }
 @media (min-width: 767.98px) {
-  .menu__item._hover .menu__sub-list {
+  .menu__item._hover .menu__mobile {
     opacity: 1;
     visibility: visible;
     transform: translateY(0rem);

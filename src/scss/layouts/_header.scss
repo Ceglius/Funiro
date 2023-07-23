@@ -154,7 +154,7 @@
     @media (min-width: $breakpoint768) {
       @media (any-hover: hover) {
         &:hover {
-          .menu__sub-list {
+          .menu__mobile {
             opacity: 1;
             visibility: visible;
             transform: translateY(rem(0));
@@ -178,7 +178,7 @@
 
     @media (min-width: $breakpoint768) {
       &._hover {
-        .menu__sub-list {
+        .menu__mobile {
           opacity: 1;
           visibility: visible;
           transform: translateY(rem(0));
