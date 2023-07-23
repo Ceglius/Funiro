@@ -54,6 +54,10 @@ export function menuInit() {
         document.documentElement.classList.toggle("menu-open");
         document.querySelector(".menu__body").classList.toggle("_active");
         document.querySelector("body").classList.toggle("lock");
+
+        window.addEventListener("resize", () => {
+          document.querySelector("body").classList.remove("lock");
+        })
       }
     });
   }

@@ -3,10 +3,9 @@ const common = require("./webapck.common.config");
 const { merge } = require("webpack-merge");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const glob = require("glob");
-const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
-const ZipPlugin = require("zip-webpack-plugin");
+
 const TerserPlugin = require("terser-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = merge(common, {
   entry: {
@@ -60,51 +59,7 @@ module.exports = merge(common, {
           ],
         },
       }),
-      new ImageMinimizerPlugin({
-        minimizer: {
-          implementation: ImageMinimizerPlugin.imageminMinify,
-          options: {
-            plugins: [
-              ["imagemin-mozjpeg", { quality: 40 }],
-              [
-                "imagemin-pngquant",
-                {
-                  quality: [0.65, 0.9],
-                  speed: 4,
-                },
-              ],
-              ["gifsicle", { interlaced: true }],
-              [
-                "imagemin-svgo",
-                {
-                  plugins: [
-                    {
-                      name: "preset-default",
-                      params: {
-                        overrides: {
-                          removeViewBox: false,
-                          addAttributesToSVGElement: {
-                            params: {
-                              removeViewBox: false,
-                              addAttributesToSVGElement: {
-                                params: {
-                                  attributes: [
-                                    { xmlns: "http://www.w3.org/2000/svg" },
-                                  ],
-                                },
-                              },
-                            },
-                          },
-                        },
-                      },
-                    },
-                  ],
-                },
-              ],
-            ],
-          },
-        },
-      }),
+
     ],
     usedExports: true,
 
@@ -151,7 +106,9 @@ module.exports = merge(common, {
       filename: "./assets/css/[name].[contenthash:10].css",
     }),
 
-
+    new CleanWebpackPlugin({
+      cleanAfterEveryBuildPatterns: ['**/*.LICENSE.txt'],
+    }),
     // new ZipPlugin({
     //   path: '../',
     //   filename: "dist.zip"

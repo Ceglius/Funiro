@@ -206,7 +206,7 @@
         .menu__link {
           color: var(--orange-co);
         }
-        .menu__sub-list {
+        .menu__mobile {
           grid-template-rows: 1fr;
         }
       }
@@ -240,16 +240,17 @@
       font-size: rem(14);
     }
   }
-
-  // .menu__sub-list
-  &__sub-list {
+  &__mobile {
     position: relative;
     background-color: var(--orange-co);
     flex: 1 1 100%;
     padding: 0 rem(15);
-
-    div {
-      overflow: hidden;
+    @media (max-width: $breakpoint768) {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows ease-out 0.3s;
+      margin-left: rem(-15);
+      margin-right: rem(-15);
     }
     @media (min-width: $breakpoint768) {
       opacity: 0;
@@ -262,12 +263,11 @@
       position: absolute;
       top: 100%;
     }
+  }
+  // .menu__sub-list
+  &__sub-list {
     @media (max-width: $breakpoint768) {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows ease-out 0.3s;
-      margin-left: rem(-15);
-      margin-right: rem(-15);
+      overflow: hidden;
     }
   }
 
@@ -437,16 +437,15 @@
     transform: translateY(-8px);
     transition: transform 0.3s ease;
 
-    ._active &{
+    ._active & {
       opacity: 1;
       visibility: visible;
       transform: translateY(0px);
     }
-    @media (max-width: $breakpoint992){
+    @media (max-width: $breakpoint992) {
       top: rem(50);
-      
     }
-    @media (max-width: $breakpoint768){
+    @media (max-width: $breakpoint768) {
       position: fixed;
       top: rem(50);
       width: 100%;
@@ -455,70 +454,61 @@
 
   // .cart-header__list
   &__list {
-    
   }
-
 }
 .cart-list {
   overflow: auto;
 
-    max-height: rem(200);
+  max-height: rem(200);
 
-    &__image {
-      flex: 0 0 rem(100);
-      height: rem(100);
-    
-    }
+  &__image {
+    flex: 0 0 rem(100);
+    height: rem(100);
+  }
 
-    &__body{
-      flex: 1 1 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      padding-left: rem(10);
+  &__body {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: rem(10);
+  }
 
-
-    }
-
-    &__title {
-      color: inherit;
-      font-weight: var(--fw-semi-bold);
-      transition: color 0.3s ease;
-      @media (any-hover: hover) {
-        
-        &:hover {
-         color: var(--orange-co) 
-        }
-      };
-    }
-
-    &__quantity {
-      font-size: rem(14);
-      margin-right: calc(5/14 * 1em);
-    }
-
-    &__delete {
-      color: red;
-      font-size: rem(14);
-
-      @media (any-hover: hover) {
-        
-        &:hover {
-          text-decoration: underline;
-        }
+  &__title {
+    color: inherit;
+    font-weight: var(--fw-semi-bold);
+    transition: color 0.3s ease;
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--orange-co);
       }
-      
     }
+  }
 
-    &__item {
-      display: flex;
-      align-items: flex-start;
+  &__quantity {
+    font-size: rem(14);
+    margin-right: calc(5 / 14 * 1em);
+  }
 
-      &:not(:last-child) {
-        margin-bottom: rem(15);
+  &__delete {
+    color: red;
+    font-size: rem(14);
+
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
       }
-
     }
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+
+    &:not(:last-child) {
+      margin-bottom: rem(15);
+    }
+  }
 }
 .icon-menu {
   display: none;

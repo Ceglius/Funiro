@@ -4,7 +4,6 @@
   ==== Footer ====
 */
 .footer {
-
   // .footer__body
   &__body {
     border-top: 1px solid #d8d8d8;
@@ -48,7 +47,6 @@
   &__menu {
     @include adaptiveValue("margin-bottom", 40, 30);
   }
-
 }
 
 .contacts-footer {
@@ -82,7 +80,7 @@
       &:not(:last-child) {
         margin-bottom: rem(20);
       }
-      .menu-footer__list {
+      .menu-footer__mobile {
         grid-template-rows: 1fr;
       }
       .menu-footer__title._icon-arrow-down {
@@ -116,17 +114,16 @@
       }
     }
   }
-
-  // .menu-footer__list
-  &__list {
-    div {
-      overflow: hidden;
-    }
+  &__mobile {
     @media (max-width: $breakpoint768) {
       display: grid;
       grid-template-rows: 0fr;
       transition: grid-template-rows 0.3s ease;
     }
+  }
+  // .menu-footer__list
+  &__list {
+    overflow: hidden;
   }
 
   // .menu-footer__item
